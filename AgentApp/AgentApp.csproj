@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>dotnet-AgentApp-41361DC4-3DA6-4F00-A813-7B0B68B7169B</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Protobuf Include="..\Protos\agent.proto" GrpcServices="Agent"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Google.Protobuf" Version="3.21.9"/>
+        <PackageReference Include="Grpc.Net.Client" Version="2.50.0"/>
+        <PackageReference Include="Grpc.Tools" Version="2.50.0">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\LabsDB\LabsDB.csproj"/>
+    </ItemGroup>
+</Project>

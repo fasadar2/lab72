@@ -1,0 +1,29 @@
+﻿@model HouseViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<table>
+    <thead>
+    <tr>
+        <td>Номер дома</td>
+        <td>Показание</td>
+        <td>Значение</td>
+        <td>Время</td>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var i in Model.Houses)
+    {
+        @foreach (var j in i.Indications)
+        {
+            <tr>
+                <td>@i.Id</td>
+                <td>@j.Title</td>
+                <td>@j.Value.ToString("F")</td>
+                <td>@j.TimeStamp.ToString("f")</td>
+            </tr>
+        }
+    }
+    </tbody>
+</table>
